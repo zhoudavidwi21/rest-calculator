@@ -9,12 +9,18 @@ public class CalculatorController {
 
     /**
      * Does sum calculation
-     * @param a int
-     * @param b int
+     * @param a
+     * @param b
      * @return sum int
      */
     @RequestMapping("/sum")
     public int sum(@RequestParam int a, @RequestParam int b){
         return a + b;
     }
+
+    @RequestMapping("/sqr")
+    public int sum(@RequestParam int a){
+        return a * a;
+    }
+
 }
