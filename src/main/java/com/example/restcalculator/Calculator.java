@@ -15,6 +15,10 @@ public class Calculator {
     }
 
     public double division(int a, int b){
+        if (b == 0){
+            throw new ArithmeticException("Divide by zero is invalid");
+        }
+
         return (double) a / (double)b;
     }
 
