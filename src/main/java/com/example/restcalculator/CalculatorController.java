@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalculatorController {
 
+    private Calculator calculator = new Calculator();
+
     /**
      * Does sum calculation
      * @param a
@@ -15,36 +17,36 @@ public class CalculatorController {
      */
     @RequestMapping("/sum")
     public int sum(@RequestParam int a, @RequestParam int b){
-        return a + b;
+        return calculator.sum(a, b);
     }
 
     @RequestMapping("/sqr")
     public int sqr(@RequestParam int a){
-        return a * a;
+        return calculator.sqr(a);
     }
 
     @RequestMapping("/multiply")
     public int multiply(@RequestParam int a, @RequestParam int b){
-        return a * b;
+        return calculator.multiply(a, b);
     }
 
     @RequestMapping("/division")
     public double division(@RequestParam int a, @RequestParam int b){
-        return (double)a / (double)b;
+        return calculator.division(a, b);
     }
 
     @RequestMapping("/abs")
     public int abs(@RequestParam int a){
-        return Math.abs(a);
+        return calculator.abs(a);
     }
 
     @RequestMapping("/pow")
-    public double expo(@RequestParam int a, @RequestParam int b){
-        return Math.pow(a, b);
+    public double pow(@RequestParam int a, @RequestParam int b){
+        return calculator.pow(a, b);
     }
 
     @RequestMapping("/min")
     public int min(@RequestParam int a, @RequestParam int b){
-        return Math.min(a, b);
+        return calculator.min(a, b);
     }
 }
